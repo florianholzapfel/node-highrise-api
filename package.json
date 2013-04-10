@@ -7,14 +7,22 @@
     "email": "flo.holzapfel@gmail.com"
   },
   "homepage": "https://github.com/florianholzapfel/node-highrise-api",
+  "licenses": [
+    {
+      "type": "Apache License 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/florianholzapfel/node-highrise-api.git"
   },
-  "main": "./lib/node-highrise-api",
+  "main": ".",
   "engines": {
-    "node": "*",
-	"xml2js": "*"
+    "node": "*"
+  },
+  "dependencies": {
+  	"xml2js": "*"
   },
   "readmeFilename": "README.md"
 }
