@@ -1,0 +1,20 @@
+{
+  "name": "node-highrise-api",
+  "description": "access to the highrise cms api",
+  "version": "0.0.1",
+  "author": {
+    "name": "Florian Holzapfel",
+    "email": "flo.holzapfel@gmail.com"
+  },
+  "homepage": "https://github.com/florianholzapfel/node-highrise-api",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/florianholzapfel/node-highrise-api.git"
+  },
+  "main": "./lib/node-highrise-api",
+  "engines": {
+    "node": "*",
+	"xml2js": "*"
+  },
+  "readmeFilename": "README.md"
+}
