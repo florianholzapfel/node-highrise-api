@@ -1,4 +1,7 @@
 # node-highrise-api
+As the name already implies, this project implements the API for [Highrise] [1], 37signals' CRM system.
+
+The implementation currently only allows to retrieve data from Highrise. Updating records will be implemented in the future.
 
 ## Getting started
 
@@ -28,7 +31,7 @@ client.people.get(function(err, people) {
 ```
 
 ## References ##
- * [Highrise API] [1]
+ * [Highrise API] [2]
 
 ## Formalia
 
@@ -54,4 +57,5 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-[1]: https://github.com/37signals/highrise-api
+[1]: http://highrisehq.com
+[2]: https://github.com/37signals/highrise-api
