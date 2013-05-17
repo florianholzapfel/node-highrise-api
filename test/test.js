@@ -30,6 +30,22 @@ var client = new highrise({
 	token: '<YOUR_TOKEN>'
 });
 
+client.cases.get(true, function(err, cases) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(cases));
+	}
+});
+
+client.deletions.get(function(err, deletions) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(deletions));
+	}
+});
+
 client.companies.get(function(err, companies) {
 	if(err) {
 		console.log(err);
