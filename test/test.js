@@ -148,3 +148,22 @@ client.category.get('task', 4443591, function(err, category) {
 		console.log(JSON.stringify(category, null, "  "));
 	}
 });
+
+client.tasks.get({
+	type: 'kases',
+	subject: 915784
+}, function(err, tasks) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(tasks, null, "  "));
+	}
+});
+
+client.task.get(29688979, function(err, category) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(category, null, "  "));
+	}
+});
