@@ -77,3 +77,50 @@ client.person.get(140390490, function(err, person) {
 		console.log(JSON.stringify(person));
 	}
 });
+
+client.deals.get(function(err, deals) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(deals, null, "  "));
+	}
+});
+
+client.deal.get(2820547, function(err, deal) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(deal, null, "  "));
+	}
+});
+
+client.notes.get({
+	type: 'people',
+	subject: 166222215
+}, function(err, notes) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(notes, null, "  "));
+	}
+});
+
+client.note.get(161143856, function(err, note) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(note, null, "  "));
+		
+		note.comments(function(err, comments) {
+			console.log(JSON.stringify(comments, null, "  "));
+		});
+	}
+});
+
+client.comment.get(161144101, function(err, comment) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(comment, null, "  "));
+	}
+});
