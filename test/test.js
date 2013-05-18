@@ -30,6 +30,14 @@ var client = new highrise({
 	token: '<YOUR_TOKEN>'
 });
 
+client.account.get(function(err, account) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(account, null, "  "));
+	}
+});
+
 client.cases.get(true, function(err, cases) {
 	if(err) {
 		console.log(err);
@@ -122,5 +130,21 @@ client.comment.get(161144101, function(err, comment) {
 		console.log(err);
 	} else {
 		console.log(JSON.stringify(comment, null, "  "));
+	}
+});
+
+client.categories.get('task', function(err, categories) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(categories, null, "  "));
+	}
+});
+
+client.category.get('task', 4443591, function(err, category) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(category, null, "  "));
 	}
 });
