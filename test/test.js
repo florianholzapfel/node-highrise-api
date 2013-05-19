@@ -167,3 +167,27 @@ client.task.get(29688979, function(err, category) {
 		console.log(JSON.stringify(category, null, "  "));
 	}
 });
+
+client.users.get(function(err, users) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(users, null, "  "));
+	}
+});
+
+client.user.get(905287, function(err, user) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(user, null, "  "));
+	}
+});
+
+client.user.me(function(err, user) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(user, null, "  "));
+	}
+});
