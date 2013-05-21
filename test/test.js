@@ -223,3 +223,11 @@ client.membership.get(1596426, function(err, membership) {
 		console.log(JSON.stringify(membership, null, "  "));
 	}
 });
+
+client.subject_fields.get(function(err, subject_fields) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(subject_fields, null, "  "));
+	}
+});
