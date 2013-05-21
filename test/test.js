@@ -191,3 +191,19 @@ client.user.me(function(err, user) {
 		console.log(JSON.stringify(user, null, "  "));
 	}
 });
+
+client.groups.get(function(err, groups) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(groups, null, "  "));
+	}
+});
+
+client.group.get(479169, function(err, group) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(group, null, "  "));
+	}
+});
