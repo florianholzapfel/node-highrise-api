@@ -231,3 +231,27 @@ client.subject_fields.get(function(err, subject_fields) {
 		console.log(JSON.stringify(subject_fields, null, "  "));
 	}
 });
+
+client.parties.deleted(function(err, parties) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(parties, null, "  "));
+	}
+});
+
+client.parties.search(function(err, parties) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(parties, null, "  "));
+	}
+});
+
+client.parties.recently_viewed(function(err, parties) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(parties, null, "  "));
+	}
+});
