@@ -207,3 +207,19 @@ client.group.get(479169, function(err, group) {
 		console.log(JSON.stringify(group, null, "  "));
 	}
 });
+
+client.memberships.get(function(err, memberships) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(memberships, null, "  "));
+	}
+});
+
+client.membership.get(1596426, function(err, membership) {
+	if(err) {
+		console.log(err);
+	} else {
+		console.log(JSON.stringify(membership, null, "  "));
+	}
+});
