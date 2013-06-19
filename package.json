@@ -9,8 +9,8 @@
   "homepage": "https://github.com/florianholzapfel/node-highrise-api",
   "licenses": [
     {
-      "type": "Apache License 2.0",
-      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+      "type": "The MIT License (MIT)",
+      "url": "http://opensource.org/licenses/MIT"
     }
   ],
   "repository": {
