@@ -13,6 +13,10 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
+  "scripts": {
+    "pretest": "./node_modules/.bin/jshint index.js lib test",
+    "test": "./node_modules/.bin/mocha -R spec ./test --recursive --timeout 5s"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/florianholzapfel/node-highrise-api.git"
@@ -23,6 +27,10 @@
   },
   "dependencies": {
   	"xml2js": "*"
+  },
+  "devDependencies": {
+    "jshint": "~2.3.0",
+    "mocha": "~1.16.0"
   },
   "readmeFilename": "README.md"
 }
