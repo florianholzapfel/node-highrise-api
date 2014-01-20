@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "pretest": "./node_modules/.bin/jshint index.js lib test",
-    "test": "./node_modules/.bin/mocha -R spec ./test --recursive --timeout 5s"
+    "test": "./node_modules/.bin/mocha -R spec ./test --recursive --slow 2s --timeout 5s"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,8 @@
   },
   "devDependencies": {
     "jshint": "~2.4",
-    "mocha": "~1"
+    "mocha": "~1",
+	"chai": "~1.8"
   },
   "readmeFilename": "README.md"
 }

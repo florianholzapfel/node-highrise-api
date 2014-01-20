@@ -23,45 +23,136 @@
  * THE SOFTWARE.
 **/
 var highrise = require('..');
+var assert = require('chai').assert;
 
 var client = new highrise({
 	secure: true,
-	username: '<COMPANY_NAME>',	// e.g. http://COMPANY_NAME.highrisehq.com
-	token: '<YOUR_TOKEN>'
+	username: process.env.ACCOUNT,
+	token: process.env.TOKEN
 });
 
-client.account.get(function (err, account) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(account, null, '  '));
-	}
+describe('Account', function () {
+	it('Get account', function (done) {
+		client.account.get(function (err, account) {
+			assert.isNull(err, 'there was an error');
+			assert.equal(account.subdomain, process.env.ACCOUNT,
+							'returned account equals queried account');
+			assert.isTrue(account.ssl_enabled, 'account is ssl enabled');
+			done();
+		});
+	});
 });
 
-client.cases.get(true, function (err, cases) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(cases));
-	}
+describe('Cases', function () {
+	it('Get cases', function (done) {
+		client.cases.get(true, function (err, cases) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
 });
 
-client.deletions.get(function (err, deletions) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(deletions));
-	}
+describe('Deletions', function () {
+	it('Get deletions', function (done) {
+		client.deletions.get(true, function (err, deletions) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
 });
 
-client.companies.get(function (err, companies) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(companies));
-	}
+describe('Companies', function () {
+	it('Get companies', function (done) {
+		client.companies.get(true, function (err, companies) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
 });
 
+describe('People', function () {
+	it('Get people', function (done) {
+		client.people.get(true, function (err, people) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+});
+
+describe('Deals', function () {
+	it('Get deals', function (done) {
+		client.deals.get(true, function (err, deals) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+});
+
+describe('Users', function () {
+	it('Get users', function (done) {
+		client.users.get(true, function (err, users) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+	it('Get myself', function (done) {
+		client.user.me(true, function (err, user) {
+			assert.isNull(err, 'there was an error');
+			console.log(JSON.stringify(user));
+			done();
+		});
+	});
+});
+
+describe('Groups', function () {
+	it('Get groups', function (done) {
+		client.groups.get(true, function (err, groups) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+});
+
+describe('Memberships', function () {
+	it('Get memberships', function (done) {
+		client.memberships.get(true, function (err, memberships) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+});
+
+describe('Subject fields', function () {
+	it('Get subject fields', function (done) {
+		client.subject_fields.get(true, function (err, subject_fields) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+});
+
+describe('Parties', function () {
+	it('Get deleted parties', function (done) {
+		client.parties.deleted(true, function (err, parties) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+	it('Get recently viewed parties', function (done) {
+		client.parties.recently_viewed(true, function (err, parties) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+	it('Search parties', function (done) {
+		client.parties.search(true, function (err, parties) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+});
+
+/*
 client.company.get(127058450, function (err, company) {
 	if (err) {
 		console.log(err);
@@ -70,27 +161,11 @@ client.company.get(127058450, function (err, company) {
 	}
 });
 
-client.people.get(function (err, people) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(people));
-	}
-});
-
 client.person.get(140390490, function (err, person) {
 	if (err) {
 		console.log(err);
 	} else {
 		console.log(JSON.stringify(person));
-	}
-});
-
-client.deals.get(function (err, deals) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(deals, null, '  '));
 	}
 });
 
@@ -168,35 +243,11 @@ client.task.get(29688979, function (err, category) {
 	}
 });
 
-client.users.get(function (err, users) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(users, null, '  '));
-	}
-});
-
 client.user.get(905287, function (err, user) {
 	if (err) {
 		console.log(err);
 	} else {
 		console.log(JSON.stringify(user, null, '  '));
-	}
-});
-
-client.user.me(function (err, user) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(user, null, '  '));
-	}
-});
-
-client.groups.get(function (err, groups) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(groups, null, '  '));
 	}
 });
 
@@ -208,14 +259,6 @@ client.group.get(479169, function (err, group) {
 	}
 });
 
-client.memberships.get(function (err, memberships) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(memberships, null, '  '));
-	}
-});
-
 client.membership.get(1596426, function (err, membership) {
 	if (err) {
 		console.log(err);
@@ -223,35 +266,4 @@ client.membership.get(1596426, function (err, membership) {
 		console.log(JSON.stringify(membership, null, '  '));
 	}
 });
-
-client.subject_fields.get(function (err, subject_fields) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(subject_fields, null, '  '));
-	}
-});
-
-client.parties.deleted(function (err, parties) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(parties, null, '  '));
-	}
-});
-
-client.parties.search(function (err, parties) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(parties, null, '  '));
-	}
-});
-
-client.parties.recently_viewed(function (err, parties) {
-	if (err) {
-		console.log(err);
-	} else {
-		console.log(JSON.stringify(parties, null, '  '));
-	}
-});
+*/
