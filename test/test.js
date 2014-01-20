@@ -44,8 +44,14 @@ describe('Account', function () {
 });
 
 describe('Cases', function () {
-	it('Get cases', function (done) {
+	it('Get open cases', function (done) {
 		client.cases.get(true, function (err, cases) {
+			assert.isNull(err, 'there was an error');
+			done();
+		});
+	});
+	it('Get closed cases', function (done) {
+		client.cases.get(false, function (err, cases) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
@@ -54,7 +60,7 @@ describe('Cases', function () {
 
 describe('Deletions', function () {
 	it('Get deletions', function (done) {
-		client.deletions.get(true, function (err, deletions) {
+		client.deletions.get(null, function (err, deletions) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
@@ -63,7 +69,7 @@ describe('Deletions', function () {
 
 describe('Companies', function () {
 	it('Get companies', function (done) {
-		client.companies.get(true, function (err, companies) {
+		client.companies.get(null, function (err, companies) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
@@ -72,7 +78,7 @@ describe('Companies', function () {
 
 describe('People', function () {
 	it('Get people', function (done) {
-		client.people.get(true, function (err, people) {
+		client.people.get(null, function (err, people) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
@@ -81,7 +87,7 @@ describe('People', function () {
 
 describe('Deals', function () {
 	it('Get deals', function (done) {
-		client.deals.get(true, function (err, deals) {
+		client.deals.get(null, function (err, deals) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
@@ -90,15 +96,14 @@ describe('Deals', function () {
 
 describe('Users', function () {
 	it('Get users', function (done) {
-		client.users.get(true, function (err, users) {
+		client.users.get(function (err, users) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
 	});
 	it('Get myself', function (done) {
-		client.user.me(true, function (err, user) {
+		client.user.me(function (err, user) {
 			assert.isNull(err, 'there was an error');
-			console.log(JSON.stringify(user));
 			done();
 		});
 	});
@@ -106,7 +111,7 @@ describe('Users', function () {
 
 describe('Groups', function () {
 	it('Get groups', function (done) {
-		client.groups.get(true, function (err, groups) {
+		client.groups.get(function (err, groups) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
@@ -115,7 +120,7 @@ describe('Groups', function () {
 
 describe('Memberships', function () {
 	it('Get memberships', function (done) {
-		client.memberships.get(true, function (err, memberships) {
+		client.memberships.get(function (err, memberships) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
@@ -124,7 +129,7 @@ describe('Memberships', function () {
 
 describe('Subject fields', function () {
 	it('Get subject fields', function (done) {
-		client.subject_fields.get(true, function (err, subject_fields) {
+		client.subject_fields.get(function (err, subject_fields) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
@@ -139,13 +144,13 @@ describe('Parties', function () {
 		});
 	});
 	it('Get recently viewed parties', function (done) {
-		client.parties.recently_viewed(true, function (err, parties) {
+		client.parties.recently_viewed(function (err, parties) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
 	});
 	it('Search parties', function (done) {
-		client.parties.search(true, function (err, parties) {
+		client.parties.search(null, function (err, parties) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
