@@ -26,11 +26,11 @@
     "node": "*"
   },
   "dependencies": {
-  	"xml2js": "*"
+  	"xml2js": "~0.4"
   },
   "devDependencies": {
-    "jshint": "~2.3.0",
-    "mocha": "~1.16.0"
+    "jshint": "~2.4",
+    "mocha": "~1"
   },
   "readmeFilename": "README.md"
 }

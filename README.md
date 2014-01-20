@@ -1,4 +1,6 @@
 # node-highrise-api
+[![Build Status](https://travis-ci.org/florianholzapfel/node-highrise-api.png)](https://travis-ci.org/florianholzapfel/node-highrise-api) [![Dependency Status](https://david-dm.org/florianholzapfel/node-highrise-api.png)](https://david-dm.org/florianholzapfel/node-highrise-api)
+
 As the name already implies, this project implements the API for [Highrise] [1], 37signals' CRM system.
 
 The implementation currently only allows to retrieve data from Highrise. Updating records will be implemented in the future.
