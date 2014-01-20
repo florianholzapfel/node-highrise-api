@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /**
  * test.js
  *
@@ -29,6 +28,13 @@ var client = new highrise({
 	secure: true,
 	username: process.env.ACCOUNT,
 	token: process.env.TOKEN
+});
+
+describe('General', function () {
+	it('Test environment should be defined', function () {
+		assert.isDefined(process.env.ACCOUNT, 'ACCOUNT is defined');
+		assert.isDefined(process.env.TOKEN, 'TOKEN is defined');
+	});
 });
 
 describe('Account', function () {

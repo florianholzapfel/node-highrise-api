@@ -32,6 +32,17 @@ client.people.get(function(err, people) {
 });
 ```
 
+### Unit test ###
+You can run the automated unit test using the following command line:
+
+```
+ACCOUNT=YOUR_ACCOUNT TOKEN=YOUR_ACCOUNT_TOKEN npm test
+```
+
+```YOUR_ACCOUNT``` and ```YOUR_TOKEN``` need to be replaced with correct values.
+
+Although, the unit test is desgined to not modify your Highrise installation (it deletes all objects it creates and does not modify or delete already existing objects), please use it at your **OWN RISK**.
+
 ## References ##
  * [Highrise API] [2]
 
