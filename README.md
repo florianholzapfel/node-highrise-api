@@ -1,5 +1,5 @@
 # node-highrise-api
-[![Build Status](https://travis-ci.org/florianholzapfel/node-highrise-api.png)](https://travis-ci.org/florianholzapfel/node-highrise-api) [![Dependency Status](https://david-dm.org/florianholzapfel/node-highrise-api.png)](https://david-dm.org/florianholzapfel/node-highrise-api)
+[![Build Status](https://travis-ci.org/florianholzapfel/node-highrise-api.png)](https://travis-ci.org/florianholzapfel/node-highrise-api) [![NPM version](https://badge.fury.io/js/node-highrise-api.png)](http://badge.fury.io/js/node-highrise-api) [![Dependency Status](https://david-dm.org/florianholzapfel/node-highrise-api.png)](https://david-dm.org/florianholzapfel/node-highrise-api)
 
 As the name already implies, this project implements the API for [Highrise] [1], 37signals' CRM system.
 
