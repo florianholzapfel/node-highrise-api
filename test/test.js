@@ -144,12 +144,12 @@ describe('Subject fields', function () {
 
 describe('Parties', function () {
 	it('Get deleted parties', function (done) {
-		client.parties.deleted(true, function (err, parties) {
+		client.parties.deleted(null, function (err, parties) {
 			assert.isNull(err, 'there was an error');
 			done();
 		});
 	});
-	it('Get recently viewed parties', function (done) {
+	it.skip('Get recently viewed parties', function (done) {
 		client.parties.recently_viewed(function (err, parties) {
 			assert.isNull(err, 'there was an error');
 			done();
