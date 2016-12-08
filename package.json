@@ -26,12 +26,12 @@
     "node": "*"
   },
   "dependencies": {
-  	"xml2js": "~0.4"
+    "xml2js": "~0.4"
   },
   "devDependencies": {
     "jshint": "~2.4",
     "mocha": "~1",
-	"chai": "~1.8"
+    "chai": "~1.8"
   },
   "readmeFilename": "README.md"
 }
